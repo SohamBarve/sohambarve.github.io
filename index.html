@@ -20,9 +20,10 @@
 <header class="bar">
   <a href="#top" class="bar-name">Soham Barve</a>
   <nav class="bar-nav">
+    <a href="#profile">About</a>
     <a href="#work">Work</a>
     <a href="#experience">Experience</a>
-    <a href="#profile">Profile</a>
+    <a href="#contact">Contact</a>
   </nav>
   <div class="bar-meta">
     <span class="status"><i></i>Open to work</span>
@@ -35,28 +36,35 @@
   <section class="hero">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="hero-inner">
-      <p class="mono label">AI Engineer / Data &amp; ML</p>
-      <h1 class="reveal">I build Python and LLM systems<br> that hold up against messy,<br> real-world data.</h1>
+      <div class="hero-top">
+        <div class="hero-text">
+          <p class="mono label"><span class="dot" style="--c:var(--lime)"></span>Soham Barve · AI Engineer / Data &amp; ML</p>
+          <h1 class="reveal">I build Python and <span class="hl">LLM systems</span><br> that hold up against messy,<br> real-world data.</h1>
+        </div>
+        <figure class="hero-photo reveal">
+          <img src="assets/soham.jpg" alt="Soham Barve" width="640" height="800">
+          <figcaption class="mono"><span class="dot" style="--c:var(--lime)"></span>Dublin, Ireland</figcaption>
+        </figure>
+      </div>
       <div class="hero-cols reveal">
         <div>
-          <p class="mono label">AI</p>
+          <p class="mono label" style="--c:var(--lime)">AI</p>
           <ul><li>RAG pipelines</li><li>LLM extraction</li><li>Fine-tuning</li><li>AI governance</li></ul>
         </div>
         <div>
-          <p class="mono label">Data</p>
+          <p class="mono label" style="--c:var(--sky)">Data</p>
           <ul><li>SQL &amp; validation</li><li>Power BI</li><li>Forecasting</li><li>Anomaly detection</li></ul>
         </div>
         <div>
-          <p class="mono label">Engineering</p>
+          <p class="mono label" style="--c:var(--coral)">Engineering</p>
           <ul><li>Python, FastAPI, Flask</li><li>PostgreSQL, pgvector</li><li>LangChain, XGBoost</li><li>AWS, Docker</li></ul>
         </div>
         <div class="hero-note">
-          <p class="mono label">Now</p>
+          <p class="mono label" style="--c:var(--lilac)">Now</p>
           <p>MSc Data &amp; Computational Science at UCD. Working on AI governance with OrcaWise. Based in Dublin, open to Ireland or India.</p>
         </div>
       </div>
     </div>
-    <a href="#work" class="scroll-hint mono">Scroll ↓</a>
   </section>
 
   <div class="ticker" aria-hidden="true">
@@ -66,173 +74,11 @@
     </div>
   </div>
 
-  <section id="work" class="section">
-    <div class="section-head">
-      <h2 class="mono label">Selected work</h2>
-      <p class="mono label count">07</p>
-    </div>
-
-    <ol class="rows">
-      <li class="row reveal">
-        <button class="row-head" aria-expanded="false">
-          <span class="mono n">01</span>
-          <span class="t">Medifolio</span>
-          <span class="tags">RAG · OCR · Springer paper</span>
-          <span class="mono y">2025</span>
-        </button>
-        <div class="row-body">
-          <p>A medical portfolio system that turns doctors' handwritten prescriptions into searchable patient records. I built the OCR pipeline on AWS Textract and the retrieval layer on PostgreSQL with pgvector and Pinecone, which reached about 95% retrieval accuracy. A fine-tuned LLaMA chatbot books appointments at 88–90% accuracy. Published as first author in Springer CCIS.</p>
-          <p class="mono stack">Flask · React · PostgreSQL · pgvector · Pinecone · MongoDB · AWS Textract</p>
-          <a class="arrow" href="https://doi.org/10.1007/978-3-032-08638-9_13">Read the paper ↗</a>
-        </div>
-      </li>
-
-      <li class="row reveal">
-        <button class="row-head" aria-expanded="false">
-          <span class="mono n">02</span>
-          <span class="t">MacroSignal</span>
-          <span class="tags">LLM features · market signals</span>
-          <span class="mono y">Ongoing</span>
-        </button>
-        <div class="row-body">
-          <p>A geopolitical market signal engine. It ingests news, extracts entities and sentiment with LLaMA 3, and feeds those features to an XGBoost model that produces directional signals across 24 financial assets, at 75–79% directional accuracy under chronological validation. A FAISS index over 26,000 news passages handles retrieval, and tuning lifted evidence-grounded answer accuracy from 72% to 86% on 180 annotated queries.</p>
-          <p class="mono stack">Python · LangChain · LLaMA 3 (Groq) · FAISS · XGBoost · FastAPI · Docker</p>
-        </div>
-      </li>
-
-      <li class="row reveal">
-        <button class="row-head" aria-expanded="false">
-          <span class="mono n">03</span>
-          <span class="t">Toxic Comment Detection</span>
-          <span class="tags">NLP · multi-label</span>
-          <span class="mono y">HackMIT</span>
-        </button>
-        <div class="row-body">
-          <p>Started as a 48-hour hackathon build that took 3rd place at HackMIT (MIT-WPU). I later turned it into a proper multi-label classifier over 35,000 comments and six toxicity categories. A fine-tuned RoBERTa with class-weighted loss reached 0.82 macro-F1, up from 0.74 for a TF-IDF baseline.</p>
-          <p class="mono stack">PyTorch · Hugging Face · scikit-learn</p>
-        </div>
-      </li>
-
-      <li class="row reveal">
-        <button class="row-head" aria-expanded="false">
-          <span class="mono n">04</span>
-          <span class="t">ARIMA × XGBoost</span>
-          <span class="tags">Time-series forecasting</span>
-          <span class="mono y">2026</span>
-        </button>
-        <div class="row-body">
-          <p>A UCD team project pairing ARIMA for the linear structure of a price series with XGBoost on the residuals. With rolling-origin validation over eight years of data, the hybrid cut MASE from 0.96 (ARIMA alone) to 0.84. Presented as a co-authored research poster.</p>
-          <p class="mono stack">Python · statsmodels · XGBoost · pandas</p>
-        </div>
-      </li>
-
-      <li class="row reveal">
-        <button class="row-head" aria-expanded="false">
-          <span class="mono n">05</span>
-          <span class="t">SyncSphere</span>
-          <span class="tags">Real-time comms · paper</span>
-          <span class="mono y">2024</span>
-        </button>
-        <div class="row-body">
-          <p>An encrypted real-time chat app with authentication and live translation. I built the WebRTC video calling, and we tested it with 25+ concurrent users. Published in IJIRCCE.</p>
-          <p class="mono stack">Flask-SocketIO · WebRTC · WebSockets</p>
-        </div>
-      </li>
-
-      <li class="row reveal">
-        <button class="row-head" aria-expanded="false">
-          <span class="mono n">06</span>
-          <span class="t">Green Bonds &amp; ESG</span>
-          <span class="tags">Econometrics</span>
-          <span class="mono y">2026</span>
-        </button>
-        <div class="row-body">
-          <p>A panel-data study of whether issuing green bonds actually moves a company's ESG performance, using OLS with fixed effects.</p>
-          <p class="mono stack">Python · panel data · fixed effects</p>
-        </div>
-      </li>
-
-      <li class="row reveal">
-        <button class="row-head" aria-expanded="false">
-          <span class="mono n">07</span>
-          <span class="t">Number Plate Recognition</span>
-          <span class="tags">Computer vision</span>
-          <span class="mono y">—</span>
-        </button>
-        <div class="row-body">
-          <p>An OpenCV pipeline built for crowded Indian traffic scenes, with text extraction running on AWS and results stored in MongoDB.</p>
-          <p class="mono stack">OpenCV · AWS EC2 / S3 / IAM · MongoDB</p>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <section id="experience" class="section">
-    <div class="section-head">
-      <h2 class="mono label">Experience</h2>
-    </div>
-
-    <div class="jobs">
-      <article class="job reveal">
-        <p class="mono when">Sep 2026 — Now</p>
-        <div>
-          <h3>AI Governance Programme <em>OrcaWise RAIMS</em></h3>
-          <p>Defining operational controls for an LLM that reviews vendor NDAs inside a contract lifecycle platform used by critical infrastructure clients. Each week I take a standard like the EU AI Act and turn its obligations into requirements the system has to meet.</p>
-        </div>
-      </article>
-
-      <article class="job reveal">
-        <p class="mono when">Mar 2026 — Now</p>
-        <div>
-          <h3>Team Head, Passenger Service <em>Sky Handling Partner, Dublin Airport</em></h3>
-          <p>Leading an eight-person team across check-in, gate and boarding. Exception tracking and checklists cut handover prep from 25 to 15 minutes and lifted pre-boarding check completion from 92% to 98%.</p>
-        </div>
-      </article>
-
-      <article class="job reveal">
-        <p class="mono when">Apr — Jul 2026</p>
-        <div>
-          <h3>LLM Engineering Practitioner <em>OrcaWise Industry Practicum</em></h3>
-          <p>Customize track, with Extract as a second specialisation. Built structured-extraction workflows in Python, tested model output against expected results, and mapped EU AI Act risk tiers onto concrete checks: input validation, traceability and human review.</p>
-        </div>
-      </article>
-
-      <article class="job reveal">
-        <p class="mono when">Jun 2024 — Aug 2025</p>
-        <div>
-          <h3>Compliance Data Analyst → Intern Lead <em>DeepCytes Cyber Labs (UK)</em></h3>
-          <ul>
-            <li>Automated validation of 150,000+ payment records with Python and SQL, and traced a silent SQL error that was misreporting refunds.</li>
-            <li>Lifted anomaly-detection macro-F1 from 0.76 to 0.84 across 120,000 time-ordered events with XGBoost, served through Flask APIs in Docker.</li>
-            <li>Cut daily preprocessing of ~450,000 log records from 51 to 18 minutes with vectorised pandas.</li>
-            <li>Built Power BI dashboards that 8+ stakeholders used on their own. Promoted to lead 20 interns across four teams; offered a full-time role.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="job reveal">
-        <p class="mono when">Jan 2022 — May 2024</p>
-        <div>
-          <h3>Associate Data Analyst <em>NSM Technologies, Pune</em></h3>
-          <ul>
-            <li>Consolidated sales, service and operations data with SQL for weekly reporting.</li>
-            <li>Took a manual performance pack from 6 hours to 90 minutes with parameterised SQL and Python.</li>
-            <li>Cut a 14-table Power BI model's refresh from 18 to 7 minutes and standardised 12 KPIs across four departments.</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <section id="profile" class="section profile">
     <div class="section-head">
-      <h2 class="mono label">Profile</h2>
+      <h2 class="mono label"><span class="dot" style="--c:var(--lilac)"></span>About</h2>
     </div>
     <div class="profile-grid">
-      <figure class="photo reveal">
-        <img src="assets/soham.jpg" alt="Soham Barve" width="640" height="800" loading="lazy">
-        <figcaption class="mono">Dublin, 2026</figcaption>
-      </figure>
       <div class="profile-text reveal">
         <p class="lead">I'm Soham. I like the unglamorous part of AI work: getting the data right, checking the numbers twice, and testing models the way they'll actually be used.</p>
         <p>I did my BTech in Computer Science at MIT World Peace University in Pune, worked in compliance data and anomaly detection, then moved to Dublin for an MSc in Data and Computational Science at University College Dublin. Outside of code I run shifts at Dublin Airport, which has taught me more about decisions under pressure than any course.</p>
@@ -251,18 +97,188 @@
     </div>
   </section>
 
+  <section id="work" class="section">
+    <div class="section-head">
+      <h2 class="mono label"><span class="dot" style="--c:var(--lime)"></span>Selected work</h2>
+      <p class="mono label count">07</p>
+    </div>
+
+    <ol class="rows">
+      <li class="row reveal" style="--c:var(--lime)">
+        <button class="row-head" aria-expanded="false">
+          <span class="mono n">01</span>
+          <span class="t">Medifolio</span>
+          <span class="tags">RAG · OCR · Springer paper</span>
+          <span class="mono y">2025</span>
+        </button>
+        <div class="row-body">
+          <p>A medical portfolio system that turns doctors' handwritten prescriptions into searchable patient records. I built the OCR pipeline on AWS Textract and the retrieval layer on PostgreSQL with pgvector and Pinecone, which reached about 95% retrieval accuracy. A fine-tuned LLaMA chatbot books appointments at 88–90% accuracy. Published as first author in Springer CCIS.</p>
+          <p class="mono stack">Flask · React · PostgreSQL · pgvector · Pinecone · MongoDB · AWS Textract</p>
+          <a class="arrow" href="https://doi.org/10.1007/978-3-032-08638-9_13">Read the paper ↗</a>
+        </div>
+      </li>
+
+      <li class="row reveal" style="--c:var(--sky)">
+        <button class="row-head" aria-expanded="false">
+          <span class="mono n">02</span>
+          <span class="t">MacroSignal</span>
+          <span class="tags">LLM features · market signals</span>
+          <span class="mono y">Ongoing</span>
+        </button>
+        <div class="row-body">
+          <p>A geopolitical market signal engine. It ingests news, extracts entities and sentiment with LLaMA 3, and feeds those features to an XGBoost model that produces directional signals across 24 financial assets, at 75–79% directional accuracy under chronological validation. A FAISS index over 26,000 news passages handles retrieval, and tuning lifted evidence-grounded answer accuracy from 72% to 86% on 180 annotated queries.</p>
+          <p class="mono stack">Python · LangChain · LLaMA 3 (Groq) · FAISS · XGBoost · FastAPI · Docker</p>
+        </div>
+      </li>
+
+      <li class="row reveal" style="--c:var(--coral)">
+        <button class="row-head" aria-expanded="false">
+          <span class="mono n">03</span>
+          <span class="t">Toxic Comment Detection</span>
+          <span class="tags">NLP · multi-label</span>
+          <span class="mono y">HackMIT</span>
+        </button>
+        <div class="row-body">
+          <p>Started as a 48-hour hackathon build that took 3rd place at HackMIT (MIT-WPU). I later turned it into a proper multi-label classifier over 35,000 comments and six toxicity categories. A fine-tuned RoBERTa with class-weighted loss reached 0.82 macro-F1, up from 0.74 for a TF-IDF baseline.</p>
+          <p class="mono stack">PyTorch · Hugging Face · scikit-learn</p>
+        </div>
+      </li>
+
+      <li class="row reveal" style="--c:var(--sun)">
+        <button class="row-head" aria-expanded="false">
+          <span class="mono n">04</span>
+          <span class="t">ARIMA × XGBoost</span>
+          <span class="tags">Time-series forecasting</span>
+          <span class="mono y">2026</span>
+        </button>
+        <div class="row-body">
+          <p>A UCD team project pairing ARIMA for the linear structure of a price series with XGBoost on the residuals. With rolling-origin validation over eight years of data, the hybrid cut MASE from 0.96 (ARIMA alone) to 0.84. Presented as a co-authored research poster.</p>
+          <p class="mono stack">Python · statsmodels · XGBoost · pandas</p>
+        </div>
+      </li>
+
+      <li class="row reveal" style="--c:var(--lilac)">
+        <button class="row-head" aria-expanded="false">
+          <span class="mono n">05</span>
+          <span class="t">SyncSphere</span>
+          <span class="tags">Real-time comms · paper</span>
+          <span class="mono y">2024</span>
+        </button>
+        <div class="row-body">
+          <p>An encrypted real-time chat app with authentication and live translation. I built the WebRTC video calling, and we tested it with 25+ concurrent users. Published in IJIRCCE.</p>
+          <p class="mono stack">Flask-SocketIO · WebRTC · WebSockets</p>
+        </div>
+      </li>
+
+      <li class="row reveal" style="--c:var(--lime)">
+        <button class="row-head" aria-expanded="false">
+          <span class="mono n">06</span>
+          <span class="t">Green Bonds &amp; ESG</span>
+          <span class="tags">Econometrics</span>
+          <span class="mono y">2026</span>
+        </button>
+        <div class="row-body">
+          <p>A panel-data study of whether issuing green bonds actually moves a company's ESG performance, using OLS with fixed effects.</p>
+          <p class="mono stack">Python · panel data · fixed effects</p>
+        </div>
+      </li>
+
+      <li class="row reveal" style="--c:var(--sky)">
+        <button class="row-head" aria-expanded="false">
+          <span class="mono n">07</span>
+          <span class="t">Number Plate Recognition</span>
+          <span class="tags">Computer vision</span>
+          <span class="mono y">—</span>
+        </button>
+        <div class="row-body">
+          <p>An OpenCV pipeline built for crowded Indian traffic scenes, with text extraction running on AWS and results stored in MongoDB.</p>
+          <p class="mono stack">OpenCV · AWS EC2 / S3 / IAM · MongoDB</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="section-head">
+      <h2 class="mono label"><span class="dot" style="--c:var(--coral)"></span>Experience</h2>
+    </div>
+
+    <div class="jobs">
+      <article class="job reveal" style="--c:var(--lilac)">
+        <p class="mono when">Sep 2026 — Now</p>
+        <div>
+          <h3>AI Governance Programme <em>OrcaWise RAIMS</em></h3>
+          <p>Defining operational controls for an LLM that reviews vendor NDAs inside a contract lifecycle platform used by critical infrastructure clients. Each week I take a standard like the EU AI Act and turn its obligations into requirements the system has to meet.</p>
+        </div>
+      </article>
+
+      <article class="job reveal" style="--c:var(--sun)">
+        <p class="mono when">Mar 2026 — Now</p>
+        <div>
+          <h3>Team Head, Passenger Service <em>Sky Handling Partner, Dublin Airport</em></h3>
+          <p>Leading an eight-person team across check-in, gate and boarding. Exception tracking and checklists cut handover prep from 25 to 15 minutes and lifted pre-boarding check completion from 92% to 98%.</p>
+        </div>
+      </article>
+
+      <article class="job reveal" style="--c:var(--lilac)">
+        <p class="mono when">Apr — Jul 2026</p>
+        <div>
+          <h3>LLM Engineering Practitioner <em>OrcaWise Industry Practicum</em></h3>
+          <p>Customize track, with Extract as a second specialisation. Built structured-extraction workflows in Python, tested model output against expected results, and mapped EU AI Act risk tiers onto concrete checks: input validation, traceability and human review.</p>
+        </div>
+      </article>
+
+      <article class="job reveal" style="--c:var(--coral)">
+        <p class="mono when">Jun 2024 — Aug 2025</p>
+        <div>
+          <h3>Compliance Data Analyst → Intern Lead <em>DeepCytes Cyber Labs (UK)</em></h3>
+          <ul>
+            <li>Automated validation of 150,000+ payment records with Python and SQL, and traced a silent SQL error that was misreporting refunds.</li>
+            <li>Lifted anomaly-detection macro-F1 from 0.76 to 0.84 across 120,000 time-ordered events with XGBoost, served through Flask APIs in Docker.</li>
+            <li>Cut daily preprocessing of ~450,000 log records from 51 to 18 minutes with vectorised pandas.</li>
+            <li>Built Power BI dashboards that 8+ stakeholders used on their own. Promoted to lead 20 interns across four teams; offered a full-time role.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job reveal" style="--c:var(--sky)">
+        <p class="mono when">Jan 2022 — May 2024</p>
+        <div>
+          <h3>Associate Data Analyst <em>NSM Technologies, Pune</em></h3>
+          <ul>
+            <li>Consolidated sales, service and operations data with SQL for weekly reporting.</li>
+            <li>Took a manual performance pack from 6 hours to 90 minutes with parameterised SQL and Python.</li>
+            <li>Cut a 14-table Power BI model's refresh from 18 to 7 minutes and standardised 12 KPIs across four departments.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
 </main>
 
-<footer class="foot" id="contact">
-  <p class="mono label">Say hello</p>
-  <a class="big-mail" href="mailto:soham.barve05@gmail.com">soham.barve05@gmail.com</a>
-  <div class="foot-row">
-    <nav>
-      <a href="https://www.linkedin.com/in/sohambarve">LinkedIn ↗</a>
-      <a href="https://github.com/SohamBarve">GitHub ↗</a>
-    </nav>
-    <p class="mono">© 2026 Soham Barve. Designed and built in Dublin.</p>
+<section class="contact section" id="contact">
+  <div class="section-head">
+    <h2 class="mono label"><span class="dot" style="--c:var(--sun)"></span>Contact</h2>
   </div>
+  <div class="contact-grid">
+    <p class="contact-lead">Hiring for AI or data roles, or want to talk about a project? I'd like to hear from you.</p>
+    <div class="contact-links">
+      <a class="mail" href="mailto:soham.barve05@gmail.com">soham.barve05@gmail.com <span>↗</span></a>
+      <div class="pills">
+        <a class="pill" href="https://www.linkedin.com/in/sohambarve" style="--c:var(--sky)">LinkedIn ↗</a>
+        <a class="pill" href="https://github.com/SohamBarve" style="--c:var(--lilac)">GitHub ↗</a>
+        <a class="pill" href="mailto:soham.barve05@gmail.com" style="--c:var(--lime)">Email ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <span>Soham Barve</span>
+  <span class="mono">AI &amp; Data Engineer · Dublin</span>
+  <span class="mono">© 2026</span>
+  <a href="#top" class="mono">Back to top ↑</a>
 </footer>
 
 <script src="main.js"></script>
