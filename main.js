@@ -119,37 +119,21 @@
       const d = Math.hypot(px - lens.x, py - lens.y);
       if (d < lens.r) continue; // the real photo shows through here
       // shimmer: a slow wave of noise moving down the image
-      const wave = Math.sin(y * .18 - t * 1.6 + x * .05) * .5 + .5;
-      if (Math.random() < .015 * wave) lum = Math.random();
       const k = Math.min(ramp.length - 1, Math.floor(lum * ramp.length));
-      const ring = d < lens.r + 26;
+      const ring = false;
       ctx.fillStyle = ring ? '#c8f169' : `rgba(${r * 1.15 | 0},${g * 1.15 | 0},${b * 1.25 | 0},${.35 + lum * .65})`;
       ctx.fillText(ramp[k], px, py);
     }
-    pimg.style.clipPath = `circle(${lens.r}px at ${lens.x}px ${lens.y}px)`;
   };
   const startPortrait = () => {
-    buildSample();
-    if (!sample) return;
-    let auto = true, t = 0;
-    portrait.addEventListener('pointermove', e => {
-      const r = acv.getBoundingClientRect(); auto = false;
-      lens.x = e.clientX - r.left; lens.y = e.clientY - r.top; lens.tr = Math.min(r.width, r.height) * .26;
-    });
-    portrait.addEventListener('pointerleave', () => { auto = true; });
-    const loop = () => {
-      t += .016;
-      if (auto) { // wander slowly over the face so phones get the effect too
-        const r = acv.getBoundingClientRect();
-        lens.x = r.width * (.5 + Math.sin(t * .5) * .22); lens.y = r.height * (.36 + Math.cos(t * .37) * .12);
-        lens.tr = Math.min(r.width, r.height) * (.15 + .05 * Math.sin(t * .8));
-      }
-      lens.r += (lens.tr - lens.r) * .12;
-      drawAscii(t);
-      if (!reduce) requestAnimationFrame(loop);
-    };
-    loop();
-    addEventListener('resize', () => buildSample());
+    try {
+      buildSample();
+      if (!sample) return;
+      drawAscii(0);
+      let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { buildSample(); drawAscii(0); }, 150); });
+      // touch screens: tap to switch between the pattern and the photo
+      portrait.addEventListener('click', () => portrait.classList.toggle('reveal'));
+    } catch (e) { document.body.classList.add('no-ascii'); }
   };
   if (pimg.complete && pimg.naturalWidth) startPortrait(); else pimg.addEventListener('load', startPortrait);
 
@@ -253,20 +237,6 @@
     new IntersectionObserver(([e]) => item.on = e.isIntersecting).observe(cv);
     return item;
   };
-  $$('.card canvas').forEach(cv => startViz(cv, cv.dataset.viz, cv.closest('.card')));
-  let T = 0;
-  const vizLoop = () => {
-    T += .016;
-    vizList.forEach(v => {
-      if (!v.on || !v.cv.isConnected) return;
-      const [ctx, w, h] = fit(v.cv);
-      ctx.clearRect(0, 0, w, h);
-      VIZ[v.kind](ctx, w, h, T, v.c, v.st);
-    });
-    if (!reduce) requestAnimationFrame(vizLoop);
-  };
-  requestAnimationFrame(vizLoop);
-  if (reduce) setTimeout(vizLoop, 300);
 
   /* ---------- project details ---------- */
   const P = {
@@ -306,16 +276,13 @@
     const p = P[key]; if (!p) return;
     const card = $(`.card[data-project="${key}"]`);
     dc.style.setProperty('--c', colorOf(card));
-    dc.innerHTML = `<div class="d-viz"><canvas></canvas></div><div class="d-body">
+    dc.innerHTML = `<div class="d-viz"><img src="assets/projects/${key}.jpg" alt=""></div><div class="d-body">
       <p class="mono tag">${p.tag}</p><h3>${p.title}</h3>
       ${p.body.map(b => `<p>${b}</p>`).join('')}
       <div class="d-stats">${p.stats.map(([b, s]) => `<span><b>${b}</b>${s}</span>`).join('')}</div>
       <div class="d-stack">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
       ${p.link ? `<a class="d-link" href="${p.link[1]}" target="_blank" rel="noopener">${p.link[0]} ↗</a>` : ''}</div>`;
     dlg.showModal();
-    if (dViz) vizList.splice(vizList.indexOf(dViz), 1);
-    dViz = startViz($('canvas', dc), p.viz, card);
-    dViz.on = true;
     history.replaceState(null, '', '#' + key);
   };
   $$('.card').forEach(c => c.addEventListener('click', () => openProject(c.dataset.project)));

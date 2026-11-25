@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -58,7 +58,7 @@
     <figure class="portrait" id="portrait">
       <img src="assets/soham.jpg" alt="Soham Barve" id="portrait-img" width="640" height="800">
       <canvas id="ascii" aria-hidden="true"></canvas>
-      <figcaption class="mono"><span>fig. 01 — me, as data</span><span class="hint">move to de-noise</span></figcaption>
+      <figcaption class="mono"><span>fig. 01 — me, as data</span><span class="hint">hover to reveal</span></figcaption>
     </figure>
   </section>
 
@@ -81,12 +81,12 @@
     <header class="sec-head">
       <p class="mono idx">01</p>
       <h2>Selected <em class="serif">work</em></h2>
-      <p class="sec-note">Every tile is drawn live in your browser. Open one for the full story.</p>
+      <p class="sec-note">Seven projects across RAG, forecasting, NLP and computer vision. Click any of them for the details.</p>
     </header>
 
     <div class="bento">
-      <button class="card c-wide" data-project="medifolio" style="--c:var(--lime)">
-        <canvas data-viz="vectors"></canvas>
+      <button class="card c-feature" data-project="medifolio" style="--c:var(--lime)">
+        <div class="shot"><img src="assets/projects/medifolio.jpg" alt="Medifolio: scanned prescription turned into searchable patient records" loading="lazy" width="1800" height="1125"></div>
         <div class="card-meta">
           <p class="mono tag">RAG · OCR · Springer 2025</p>
           <h3>Medifolio</h3>
@@ -95,8 +95,8 @@
         <span class="open mono">Open ↗</span>
       </button>
 
-      <button class="card c-tall" data-project="macrosignal" style="--c:var(--coral)">
-        <canvas data-viz="signal"></canvas>
+      <button class="card" data-project="macrosignal" style="--c:var(--coral)">
+        <div class="shot"><img src="assets/projects/macrosignal.jpg" alt="MacroSignal dashboard with news features and signals" loading="lazy" width="1800" height="1125"></div>
         <div class="card-meta">
           <p class="mono tag">LLM features · In progress</p>
           <h3>MacroSignal</h3>
@@ -106,7 +106,7 @@
       </button>
 
       <button class="card" data-project="toxic" style="--c:var(--lilac)">
-        <canvas data-viz="bars"></canvas>
+        <div class="shot"><img src="assets/projects/toxic.jpg" alt="Comment moderation queue with toxicity labels" loading="lazy" width="1800" height="1125"></div>
         <div class="card-meta">
           <p class="mono tag">NLP · HackMIT 3rd</p>
           <h3>Toxic Comment Detection</h3>
@@ -116,7 +116,7 @@
       </button>
 
       <button class="card" data-project="arima" style="--c:var(--sky)">
-        <canvas data-viz="forecast"></canvas>
+        <div class="shot"><img src="assets/projects/arima.jpg" alt="Notebook chart comparing ARIMA and hybrid forecasts" loading="lazy" width="1800" height="1125"></div>
         <div class="card-meta">
           <p class="mono tag">Forecasting · UCD 2026</p>
           <h3>ARIMA × XGBoost</h3>
@@ -126,7 +126,7 @@
       </button>
 
       <button class="card" data-project="syncsphere" style="--c:var(--sun)">
-        <canvas data-viz="network"></canvas>
+        <div class="shot"><img src="assets/projects/syncsphere.jpg" alt="SyncSphere video call with translated chat" loading="lazy" width="1800" height="1125"></div>
         <div class="card-meta">
           <p class="mono tag">Real-time · IJIRCCE 2024</p>
           <h3>SyncSphere</h3>
@@ -135,8 +135,8 @@
         <span class="open mono">Open ↗</span>
       </button>
 
-      <button class="card c-wide" data-project="esg" style="--c:var(--lime)">
-        <canvas data-viz="scatter"></canvas>
+      <button class="card" data-project="esg" style="--c:var(--lime)">
+        <div class="shot"><img src="assets/projects/esg.jpg" alt="Green bond and ESG panel study figure" loading="lazy" width="1800" height="1125"></div>
         <div class="card-meta">
           <p class="mono tag">Econometrics · UCD 2026</p>
           <h3>Green Bonds &amp; ESG</h3>
@@ -145,8 +145,8 @@
         <span class="open mono">Open ↗</span>
       </button>
 
-      <button class="card c-full" data-project="plates" style="--c:var(--coral)">
-        <canvas data-viz="scan"></canvas>
+      <button class="card" data-project="plates" style="--c:var(--coral)">
+        <div class="shot"><img src="assets/projects/plates.jpg" alt="Number plate detected and read from a camera frame" loading="lazy" width="1800" height="1125"></div>
         <div class="card-meta">
           <p class="mono tag">Computer vision · AWS</p>
           <h3>Number Plate Recognition</h3>
@@ -287,6 +287,6 @@
 
 <div class="toast mono" id="toast" role="status">Copied to clipboard</div>
 
-<script src="main.js?v=4"></script>
+<script src="main.js?v=5"></script>
 </body>
 </html>
