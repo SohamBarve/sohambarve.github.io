@@ -258,7 +258,8 @@ dialog::backdrop { background: rgba(5,5,7,.7); backdrop-filter: blur(6px); }
 .rv.in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before { animation: none !important; transition: none !important; }
+  *:not(.marquee-track):not(.status i):not(.pulse), *::before { animation: none !important; transition: none !important; }
+  .marquee-track { animation-duration: 80s; }
   .rv { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
