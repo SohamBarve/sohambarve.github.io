@@ -238,6 +238,15 @@
     return item;
   };
 
+  /* ---------- photo fallback: if a photo can't load, show the drawn cover ---------- */
+  $$('img[data-fallback]').forEach(img => {
+    const swap = () => { if (img.src.indexOf(img.dataset.fallback) === -1) img.src = img.dataset.fallback; };
+    img.addEventListener('error', swap);
+    if (img.complete && img.naturalWidth === 0) swap();
+  });
+  const CREDIT = {medifolio: ['Vitaly Gariev', 'https://unsplash.com/photos/doctor-writing-on-a-patients-chart-8WYkI3cEZm8'], macrosignal: ['Nicholas Cappello', 'https://unsplash.com/photos/close-up-photo-of-monitor-displaying-graph-Wb63zqJ5gnE'], toxic: ['Shutter Speed', 'https://unsplash.com/photos/a-close-up-of-a-cell-phone-with-social-media-icons-on-it-a_lBsEZZjWc'], arima: ['Maxim Hopman', 'https://unsplash.com/photos/stock-market-candlestick-chart-on-dark-screen-fiXLQXAhCfk'], syncsphere: ['Chris Montgomery', 'https://unsplash.com/photos/macbook-pro-displaying-group-of-people-smgTvepind4'], esg: ['Zetong Li', 'https://unsplash.com/photos/livermore-wind-turbines-on-misty-green-hills-4iNQdT4mDLc'], plates: ['Atharva Tulsi', 'https://unsplash.com/photos/black-and-yellow-auto-rickshaw-on-road-poiZagysHEY']};
+  const REPOS = {medifolio: 'https://github.com/sohambarve03/medifolio-llm-medical-system', macrosignal: 'https://github.com/sohambarve03/Macrosignal', toxic: 'https://github.com/sohambarve03/toxic-comment-detector'};
+
   /* ---------- project details ---------- */
   const P = {
     medifolio: { tag: 'RAG · OCR · 2025 · First author, Springer CCIS', title: 'Medifolio', viz: 'vectors',
@@ -276,15 +285,18 @@
     const p = P[key]; if (!p) return;
     const card = $(`.card[data-project="${key}"]`);
     dc.style.setProperty('--c', colorOf(card));
-    dc.innerHTML = `<div class="d-viz"><img src="assets/projects/${key}.jpg" alt=""></div><div class="d-body">
+    const cardImg = $('img', card);
+    dc.innerHTML = `<div class="d-viz"><img src="${cardImg.currentSrc || cardImg.src}" alt=""></div><div class="d-body">
       <p class="mono tag">${p.tag}</p><h3>${p.title}</h3>
       ${p.body.map(b => `<p>${b}</p>`).join('')}
       <div class="d-stats">${p.stats.map(([b, s]) => `<span><b>${b}</b>${s}</span>`).join('')}</div>
       <div class="d-stack">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
-      ${p.link ? `<a class="d-link" href="${p.link[1]}" target="_blank" rel="noopener">${p.link[0]} ↗</a>` : ''}</div>`;
+      <div class="d-links">${REPOS[key] ? `<a class="d-link" href="${REPOS[key]}" target="_blank" rel="noopener">View code on GitHub ↗</a>` : ''}${p.link ? `<a class="d-link" href="${p.link[1]}" target="_blank" rel="noopener">${p.link[0]} ↗</a>` : ''}</div>
+      ${(cardImg.currentSrc || cardImg.src).includes('unsplash') ? `<p class="mono credit">Photo: <a href="${CREDIT[key][1]}" target="_blank" rel="noopener">${CREDIT[key][0]}</a> on Unsplash</p>` : ''}</div>`;
     dlg.showModal();
     history.replaceState(null, '', '#' + key);
   };
+  $$('.repo').forEach(el => el.addEventListener('click', e => { e.stopPropagation(); open(el.dataset.href, '_blank', 'noopener'); }));
   $$('.card').forEach(c => c.addEventListener('click', () => openProject(c.dataset.project)));
   const closeDetail = () => { dlg.close(); };
   $('.detail-close').addEventListener('click', closeDetail);
@@ -309,7 +321,7 @@
     ['Copy email address', 'action', copyMail],
     ['Send an email', 'link', () => location.href = 'mailto:soham.barve05@gmail.com'],
     ['LinkedIn', 'link', () => open('https://www.linkedin.com/in/sohambarve')],
-    ['GitHub', 'link', () => open('https://github.com/SohamBarve')],
+    ['GitHub', 'link', () => open('https://github.com/sohambarve03')],
     ['Medifolio paper (Springer)', 'link', () => open('https://doi.org/10.1007/978-3-032-08638-9_13')]
   ];
   let sel = 0, shown = items;

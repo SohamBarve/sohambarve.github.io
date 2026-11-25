@@ -154,7 +154,9 @@ h1 { margin: 0 0 28px; font-weight: 400; letter-spacing: -0.035em; line-height: 
 .card:hover { border-color: color-mix(in srgb, var(--c) 60%, transparent); transform: translateY(-4px); }
 .card:focus-visible { outline: 2px solid var(--c); outline-offset: 3px; }
 .c-feature { grid-column: 1 / -1; flex-direction: row; }
-.shot { aspect-ratio: 16 / 10; overflow: hidden; background: #000; }
+.shot { aspect-ratio: 16 / 10; overflow: hidden; background: #000; position: relative; }
+.shot::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(20,20,25,.55)); pointer-events: none; }
+.shot::before { content: ""; position: absolute; inset: 0; z-index: 1; border-bottom: 3px solid var(--c); pointer-events: none; }
 .c-feature .shot { flex: 1.5; aspect-ratio: auto; min-height: 380px; }
 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s var(--ease); }
 .card:hover .shot img { transform: scale(1.04); }
@@ -224,7 +226,7 @@ dialog::backdrop { background: rgba(5,5,7,.7); backdrop-filter: blur(6px); }
 .detail-close:hover { border-color: var(--fg); }
 .d-viz { position: relative; height: 240px; border-bottom: 1px solid var(--line); }
 .d-viz { height: auto; }
-.d-viz img { display: block; width: 100%; height: auto; }
+.d-viz img { display: block; width: 100%; height: 300px; object-fit: cover; }
 .d-body { padding: 26px 30px 32px; }
 .d-body .tag { color: var(--c); margin: 0 0 10px; }
 .d-body h3 { margin: 0 0 16px; font-size: clamp(30px, 4vw, 44px); font-weight: 400; letter-spacing: -0.035em; }
@@ -234,7 +236,12 @@ dialog::backdrop { background: rgba(5,5,7,.7); backdrop-filter: blur(6px); }
 .d-stats b { display: block; color: var(--c); font-size: 22px; font-weight: 400; letter-spacing: -0.02em; }
 .d-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .d-stack span { font-family: var(--mono); font-size: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.05); color: var(--soft); }
-.d-link { display: inline-block; margin-top: 22px; color: var(--c); }
+.d-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.d-link { display: inline-flex; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--c); color: var(--c); text-decoration: none; font-size: 14px; }
+.d-link:hover { background: var(--c); color: #111; }
+.credit { color: var(--dim); margin: 18px 0 0; }
+.repo { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 12px; color: var(--c); text-decoration: none; }
+.repo:hover { text-decoration: underline; }
 
 /* palette */
 .palette {
