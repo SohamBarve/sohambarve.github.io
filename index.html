@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soham Barve</title>
+  <meta name="description" content="Soham Barve, AI and data engineer in Dublin. Python, LLM and RAG systems, SQL and machine learning.">
+  <meta property="og:title" content="Soham Barve">
+  <meta property="og:description" content="AI and data engineer in Dublin. Python, LLM and RAG systems, SQL and machine learning.">
+  <meta property="og:image" content="assets/soham.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">Soham Barve</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Publications</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:soham.barve05@gmail.com" class="cv">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="intro wrap">
+    <div class="intro-text">
+      <p class="kicker">Dublin, Ireland</p>
+      <h1>I build Python and LLM systems that hold up against messy, real-world data.</h1>
+      <p>
+        Hi, I'm Soham. I'm finishing an MSc in Data and Computational Science at
+        University College Dublin, after a BTech in Computer Science from MIT World Peace University in Pune.
+      </p>
+      <p>
+        Most of my work sits where data engineering meets machine learning: retrieval pipelines,
+        validation jobs that catch the numbers nobody noticed were wrong, and models that are tested
+        the way they'll actually be used. Before Dublin I spent a year at DeepCytes Cyber Labs automating
+        checks on 150,000+ payment records, and ended up leading their intern cohort.
+      </p>
+      <p>
+        I'm open to roles in AI engineering and data, in Ireland or back home in India.
+      </p>
+      <p class="intro-links">
+        <a href="mailto:soham.barve05@gmail.com">soham.barve05@gmail.com</a>
+        <a href="https://www.linkedin.com/in/sohambarve">LinkedIn</a>
+        <a href="https://github.com/SohamBarve">GitHub</a>
+      </p>
+    </div>
+    <figure class="portrait">
+      <img src="assets/soham.jpg" alt="Portrait of Soham Barve" width="640" height="800">
+    </figure>
+  </section>
+
+  <section id="work" class="block wrap">
+    <h2>Experience</h2>
+    <div class="block-body">
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>AI Governance Work Experience Programme <span>OrcaWise RAIMS</span></h3>
+          <p class="meta">Sep 2026 – now · Remote</p>
+        </div>
+        <p>
+          Defining operational controls for an LLM that reviews vendor NDAs inside a contract lifecycle
+          platform used by critical infrastructure clients. Each week I take a standard like the EU AI Act
+          and turn its obligations into requirements the system has to meet.
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Team Head, Passenger Service <span>Sky Handling Partner</span></h3>
+          <p class="meta">Mar 2026 – now · Dublin Airport, part-time</p>
+        </div>
+        <p>
+          I supervise an eight-person team across check-in, gate and boarding, handling delays, missed
+          connections and escalations. Over ten weeks, structured exception tracking and checklists cut
+          shift-handover prep from 25 to 15 minutes and lifted pre-boarding check completion from 92% to 98%.
+          Not a tech job, but it's where I learned to make calls quickly with a queue of people waiting on them.
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>LLM Engineering Practitioner <span>OrcaWise Industry Practicum</span></h3>
+          <p class="meta">Apr – Jul 2026 · Dublin</p>
+        </div>
+        <p>
+          Completed the Customize track, with Extract as a second specialisation. Built Python
+          structured-extraction workflows and tested model output against expected results, then mapped
+          EU AI Act risk tiers onto concrete checks: input validation, traceability and human review points.
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Compliance Data Analyst → Intern Lead <span>DeepCytes Cyber Labs (UK)</span></h3>
+          <p class="meta">Jun 2024 – Aug 2025 · Mumbai</p>
+        </div>
+        <ul>
+          <li>Automated validation of 150,000+ payment records with Python and SQL, replacing manual rule checks with repeatable runs that flagged anomalies and high-risk transactions.</li>
+          <li>Noticed refund figures that didn't add up, traced them to a silent SQL logic error, fixed it at the source and documented the corrected rules for audit.</li>
+          <li>Pulled three or more sources together through REST APIs and SQL into Power BI dashboards that 8+ stakeholders used on their own.</li>
+          <li>Trained logistic regression, random forest and XGBoost on time-ordered security event data. Better features and thresholds lifted held-out anomaly-detection macro-F1 from 0.76 to 0.84 across 120,000 events.</li>
+          <li>Cut daily preprocessing for about 450,000 log records from 51 to 18 minutes by replacing row-wise transforms with vectorised pandas.</li>
+          <li>Served the models through Flask REST endpoints with input validation and logging, containerised with Docker and tracked in MLflow.</li>
+          <li>Promoted to Intern Lead: code reviews, runbooks and priorities for 20 interns across four teams. Offered a full-time role at the end.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Associate Data Analyst <span>NSM Technologies</span></h3>
+          <p class="meta">Jan 2022 – May 2024 · Pune</p>
+        </div>
+        <ul>
+          <li>Wrote SQL (joins, CTEs, window functions) to consolidate sales, service and operations data for weekly reporting.</li>
+          <li>Built Power BI dashboards on a star-schema model with DAX. Cut a 14-table model's refresh from 18 to 7 minutes and standardised 12 KPIs across four departments.</li>
+          <li>Replaced a manual spreadsheet performance pack with parameterised SQL and Python, taking it from 6 hours to 90 minutes.</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="projects" class="block wrap">
+    <h2>Projects</h2>
+    <div class="block-body">
+
+      <article class="project">
+        <h3>Medifolio</h3>
+        <p class="meta">2025 · First author, Springer CCIS · Flask, React, PostgreSQL, Pinecone, AWS</p>
+        <p>
+          A medical portfolio system that turns doctors' handwritten prescriptions into searchable patient
+          records. I built the OCR pipeline on AWS Textract and the retrieval layer on PostgreSQL with pgvector
+          and Pinecone, which reached about 95% retrieval accuracy. It also has a fine-tuned LLaMA chatbot for
+          booking appointments (88–90% accuracy).
+        </p>
+        <p class="links"><a href="https://doi.org/10.1007/978-3-032-08638-9_13">Read the paper</a></p>
+      </article>
+
+      <article class="project">
+        <h3>MacroSignal</h3>
+        <p class="meta">In progress · Python, LangChain, LLaMA 3 (Groq), FAISS, XGBoost, FastAPI</p>
+        <p>
+          A geopolitical market signal engine. It ingests news, pulls out entities and sentiment with LLaMA 3,
+          and feeds those features to an XGBoost model that produces directional signals across 24 financial
+          assets. Validated chronologically to avoid look-ahead bias, it currently sits at 75–79% directional accuracy.
+          A FAISS index over 26,000 news passages backs the retrieval side, and prompt and retrieval tuning
+          raised evidence-grounded answer accuracy from 72% to 86% on 180 annotated queries.
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Hybrid ARIMA + XGBoost forecasting</h3>
+        <p class="meta">2026 · UCD Mathematical Modelling · Python, statsmodels, XGBoost</p>
+        <p>
+          Team project that pairs ARIMA for the linear structure of a price series with XGBoost on the
+          residuals. With rolling-origin validation over eight years of data, the hybrid lowered MASE from 0.96
+          (ARIMA alone) to 0.84. Presented as a co-authored research poster.
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>SyncSphere</h3>
+        <p class="meta">2024 · Published in IJIRCCE · Flask-SocketIO, WebRTC</p>
+        <p>
+          An encrypted real-time chat app with authentication and live translation. I built the WebRTC
+          video calling, and we tested it with 25+ concurrent users.
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Green bonds and ESG performance</h3>
+        <p class="meta">2026 · UCD · Panel data, OLS with fixed effects</p>
+        <p>
+          A study of whether issuing green bonds actually moves a company's ESG performance, using panel
+          data and fixed-effects regression.
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Number plate recognition</h3>
+        <p class="meta">OpenCV, AWS (EC2, S3, IAM), MongoDB</p>
+        <p>
+          An OpenCV pipeline built for crowded Indian traffic scenes, with text extraction running on AWS
+          and results stored in MongoDB.
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Toxic comment detector</h3>
+        <p class="meta">3rd place, HackMIT at MIT-WPU · PyTorch, Hugging Face, scikit-learn</p>
+        <p>
+          Started as a 48-hour hackathon build. I later turned it into a proper multi-label classifier over
+          35,000 comments and six toxicity categories. A fine-tuned RoBERTa with class-weighted loss reached
+          0.82 macro-F1, up from 0.74 for a TF-IDF baseline.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills" class="block wrap">
+    <h2>Toolkit</h2>
+    <div class="block-body">
+      <dl class="skills">
+        <dt>Languages</dt><dd>Python, SQL, JavaScript</dd>
+        <dt>AI and LLMs</dt><dd>LangChain, RAG (chunking, embeddings, vector search), LLaMA 3, Groq API, fine-tuning, structured extraction, NER, sentiment analysis</dd>
+        <dt>Machine learning</dt><dd>XGBoost, scikit-learn, Random Forest, SVM, ARIMA, OpenCV, pandas, NumPy</dd>
+        <dt>Backend</dt><dd>FastAPI, Flask, Flask-SocketIO, REST, WebSockets, Node.js</dd>
+        <dt>Data</dt><dd>PostgreSQL (pgvector), MongoDB, Pinecone, Power BI</dd>
+        <dt>Cloud and tooling</dt><dd>AWS (EC2, S3, IAM, Textract), Docker, Git, GitHub Actions</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="writing" class="block wrap">
+    <h2>Publications</h2>
+    <div class="block-body">
+      <ul class="pubs">
+        <li>
+          <a href="https://doi.org/10.1007/978-3-032-08638-9_13">Medifolio: Intelligent Medical Portfolio System</a>
+          <span class="meta">Springer CCIS, ICICCT 2025 · first author</span>
+        </li>
+        <li>
+          Enhancing Global Communication with Sync Sphere
+          <span class="meta">IJIRCCE, vol. 12, issue 4, 2024</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education" class="block wrap">
+    <h2>Education</h2>
+    <div class="block-body">
+      <article class="entry">
+        <div class="entry-head">
+          <h3>MSc Data and Computational Science <span>University College Dublin</span></h3>
+          <p class="meta">2025 – 2026</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="entry-head">
+          <h3>BTech Computer Science and Engineering <span>MIT World Peace University, Pune</span></h3>
+          <p class="meta">2021 – 2025 · CGPA 8.58 / 10</p>
+        </div>
+      </article>
+      <p class="certs">
+        Also: Microsoft Certified Power BI Data Analyst Associate, Industrial IoT (Siemens Centre of Excellence, NITTTR Bhopal), Google Project Management
+        Professional Certificate, Prompt Engineering for ChatGPT (Coursera).
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="block wrap">
+    <h2>Contact</h2>
+    <div class="block-body">
+      <p class="contact-line">
+        The quickest way to reach me is email:
+        <a href="mailto:soham.barve05@gmail.com">soham.barve05@gmail.com</a>.
+        I'm also on <a href="https://www.linkedin.com/in/sohambarve">LinkedIn</a>
+        and <a href="https://github.com/SohamBarve">GitHub</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap site-footer">
+  <p>© 2026 Soham Barve · Dublin</p>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+</body>
+</html>
